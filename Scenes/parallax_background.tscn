@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://tvug6o54iyyt"]
+
+[ext_resource type="Texture2D" uid="uid://vig1dlbh74li" path="res://Assets/Background/Brown.png" id="1_n6bi8"]
+
+[node name="ParallaxBackground" type="Node2D"]
+
+[node name="ParallaxLayer" type="Parallax2D" parent="."]
+repeat_size = Vector2(190, 190)
+autoscroll = Vector2(0, -50)
+repeat_times = 7
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_left = 184.0
+offset_top = 184.0
+offset_right = 840.0
+offset_bottom = 456.0
+texture = ExtResource("1_n6bi8")
+stretch_mode = 1
+
+[node name="ParallaxLayer2" type="Parallax2D" parent="."]

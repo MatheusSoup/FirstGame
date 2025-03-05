@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh4453lsnuvfw"]
+
+[ext_resource type="Script" path="res://timer.gd" id="1_87fnv"]
+[ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="2_qgot3"]
+
+[sub_resource type="Theme" id="Theme_cug6t"]
+Label/fonts/font = ExtResource("2_qgot3")
+
+[sub_resource type="Theme" id="Theme_ua5gp"]
+Label/colors/font_color = Color(0.980469, 0.925892, 0.107239, 1)
+Label/colors/font_outline_color = Color(0.460938, 0.43313, 0.0160171, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.941176)
+Label/constants/outline_size = 10
+Label/constants/shadow_offset_y = 7
+Label/font_sizes/font_size = 80
+Label/fonts/font = ExtResource("2_qgot3")
+
+[node name="Timer" type="Node2D"]
+script = ExtResource("1_87fnv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+modulate = Color(0.0509804, 1, 1, 1)
+self_modulate = Color(0, 1, 1, 1)
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = 0.358
+anchor_right = 0.667
+anchor_bottom = 0.674
+offset_left = -0.256042
+offset_top = 0.0159912
+offset_right = -0.384033
+offset_bottom = 0.247986
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_cug6t")
+theme_override_font_sizes/font_size = 150
+horizontal_alignment = 1
+
+[node name="TimerLabel" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.278
+anchor_top = 0.012
+anchor_right = 0.722
+anchor_bottom = 0.136
+offset_left = -0.256042
+offset_top = -7.776
+offset_right = 0.25592
+offset_bottom = 15.872
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_ua5gp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true

@@ -1,0 +1,240 @@
+[gd_scene load_steps=16 format=3 uid="uid://ciaihdvo0iwmk"]
+
+[ext_resource type="Script" path="res://Scenes/game_maneger.gd" id="1_s65og"]
+[ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_0cv0x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmtei"]
+bg_color = Color(0.308594, 0.308594, 0.308594, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5s7dg"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cd1u"]
+bg_color = Color(0.921875, 1, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jvuue"]
+Button/colors/font_color = Color(0.8205, 0.882813, 0.0852135, 1)
+Button/colors/font_hover_color = Color(0.718293, 0.761719, 0.20587, 1)
+Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_0cv0x")
+Button/styles/hover = SubResource("StyleBoxFlat_wmtei")
+Button/styles/normal = SubResource("StyleBoxFlat_5s7dg")
+Button/styles/pressed = SubResource("StyleBoxFlat_7cd1u")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4hin"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjbqx"]
+draw_center = false
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kiwy"]
+bg_color = Color(0.921875, 1, 0, 1)
+draw_center = false
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_83jqb"]
+Button/colors/font_color = Color(0.921875, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.8205, 0.882813, 0.0852135, 1)
+Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_0cv0x")
+Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
+Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
+
+[sub_resource type="Theme" id="Theme_emap7"]
+Button/colors/font_color = Color(0.921875, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.8205, 0.882813, 0.0852135, 1)
+Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_0cv0x")
+Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
+Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
+
+[sub_resource type="Theme" id="Theme_t2qw1"]
+Label/colors/font_color = Color(0.104538, 0.863281, 0.169742, 1)
+Label/colors/font_outline_color = Color(0.111984, 0.386719, 0.135594, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 8
+Label/constants/shadow_offset_y = 8
+Label/font_sizes/font_size = 200
+Label/fonts/font = ExtResource("3_0cv0x")
+
+[sub_resource type="Theme" id="Theme_mxcru"]
+Button/colors/font_color = Color(0.921875, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.8205, 0.882813, 0.0852135, 1)
+Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_0cv0x")
+Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
+Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
+
+[sub_resource type="Theme" id="Theme_47gvd"]
+Button/colors/font_color = Color(0.921875, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.8205, 0.882813, 0.0852135, 1)
+Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_0cv0x")
+Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
+Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
+
+[sub_resource type="Theme" id="Theme_chc8v"]
+Label/colors/font_color = Color(0.609375, 0.0571289, 0.0571289, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/constants/shadow_offset_x = 2
+Label/font_sizes/font_size = 150
+
+[node name="GameManeger" type="Node"]
+script = ExtResource("1_s65og")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="WinContainer" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.271
+anchor_top = 0.531
+anchor_right = 0.743
+anchor_bottom = 0.642
+offset_left = 6.80798
+offset_top = -0.0880127
+offset_right = 0.0639648
+offset_bottom = -0.0160217
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 150
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/WinContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = SubResource("Theme_jvuue")
+text = "main menu"
+
+[node name="Restart" type="Button" parent="CanvasLayer/WinContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = SubResource("Theme_83jqb")
+text = "restart"
+
+[node name="Next" type="Button" parent="CanvasLayer/WinContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = SubResource("Theme_emap7")
+text = "next fase"
+
+[node name="WinLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.153
+anchor_top = 0.148
+anchor_right = 0.826
+anchor_bottom = 0.457
+offset_left = -0.256012
+offset_top = 0.0959854
+offset_right = 0.447937
+offset_bottom = -0.136017
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_t2qw1")
+text = "WINNER!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LoseContainer" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.229
+anchor_top = 0.469
+anchor_right = 0.785
+anchor_bottom = 0.58
+offset_left = 0.191986
+offset_top = 0.0879822
+offset_right = -0.320007
+offset_bottom = 0.160004
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+
+[node name="MainMenu" type="Button" parent="CanvasLayer/LoseContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = SubResource("Theme_mxcru")
+text = "main menu"
+
+[node name="Restart" type="Button" parent="CanvasLayer/LoseContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme = SubResource("Theme_47gvd")
+text = "restart"
+
+[node name="LoseLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = 0.148
+anchor_right = 0.889
+anchor_bottom = 0.457
+offset_left = -2.56
+offset_top = 0.0960007
+offset_right = -1.12805
+offset_bottom = 4.86398
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_chc8v")
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 16
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 4
+text = "LOSER!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="CanvasLayer/WinContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/WinContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/WinContainer/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/LoseContainer/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/LoseContainer/Restart" to="." method="_on_restart_pressed"]

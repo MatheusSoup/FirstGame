@@ -1,0 +1,270 @@
+[gd_scene load_steps=25 format=3 uid="uid://kj6dopatkwr5"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_p4q75"]
+[ext_resource type="Texture2D" uid="uid://d1i2ey6fiy1m6" path="res://Assets/Background/Green.png" id="2_v6xku"]
+[ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_xu5xs"]
+[ext_resource type="Texture2D" uid="uid://dq307polw5ljp" path="res://Assets/Main Characters/Ninja Frog/Idle (32x32).png" id="4_lmhrv"]
+[ext_resource type="AudioStream" uid="uid://dcorgcjnydssl" path="res://Sounds/happy-dance-groove-short-song-22918.mp3" id="5_i5285"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l5fu"]
+content_margin_left = 50.0
+bg_color = Color(0, 0.707071, 1, 0.458824)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucpqd"]
+bg_color = Color(0, 0.705882, 1, 0.239216)
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+
+[sub_resource type="Theme" id="Theme_6pkca"]
+Button/colors/font_color = Color(0.898438, 1, 0, 1)
+Button/colors/font_hover_color = Color(0.914427, 0.960938, 0.502991, 1)
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("3_xu5xs")
+Button/styles/hover = SubResource("StyleBoxFlat_7l5fu")
+Button/styles/normal = SubResource("StyleBoxFlat_ucpqd")
+
+[sub_resource type="Theme" id="Theme_pqndl"]
+Label/colors/font_color = Color(0.980469, 0.925892, 0.107239, 1)
+Label/colors/font_outline_color = Color(0.460938, 0.43313, 0.0160171, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.941176)
+Label/constants/outline_size = 10
+Label/constants/shadow_offset_y = 7
+Label/font_sizes/font_size = 100
+Label/fonts/font = ExtResource("3_xu5xs")
+
+[sub_resource type="Animation" id="Animation_yqy3t"]
+resource_name = "Menu"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Label:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, 88), Vector2(72, 180)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/Label:rotation")
+tracks/1/interp = 4
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.46667, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0872665, 0.0, -0.0872665]
+}
+
+[sub_resource type="Animation" id="Animation_ivv73"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/Control/Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, 88)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/Control/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gmvf5"]
+_data = {
+"Menu": SubResource("Animation_yqy3t"),
+"RESET": SubResource("Animation_ivv73")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewo4p"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ayl2"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtxwi"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v637l"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh654"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ednh"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir4na"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8vwi"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyvfy"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuthm"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yawfo"]
+atlas = ExtResource("4_lmhrv")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xv7mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewo4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ayl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtxwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v637l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh654")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ednh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir4na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8vwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyvfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuthm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yawfo")
+}],
+"loop": true,
+"name": &"Idle_menu",
+"speed": 10.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_p4q75")
+
+[node name="ParallaxBackground" type="Node2D" parent="."]
+
+[node name="ParallaxLayer" type="Parallax2D" parent="ParallaxBackground"]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-8, 8)
+repeat_size = Vector2(900, 258)
+autoscroll = Vector2(-50, -50)
+repeat_times = 5
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 8.0
+offset_top = 10.0
+offset_right = 1152.0
+offset_bottom = 658.0
+texture = ExtResource("2_v6xku")
+stretch_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchor_right = 1.007
+anchor_bottom = 1.0
+offset_right = -8.06409
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_top = 368.0
+offset_right = 510.0
+offset_bottom = 432.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+theme = SubResource("Theme_6pkca")
+text = "PLAY
+"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_top = 482.0
+offset_right = 510.0
+offset_bottom = 546.0
+size_flags_vertical = 0
+theme = SubResource("Theme_6pkca")
+text = "QUIT"
+expand_icon = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 88.0
+offset_right = 710.0
+offset_bottom = 168.0
+theme = SubResource("Theme_pqndl")
+text = "Hungry Frog Ninja"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gmvf5")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(912, 360)
+scale = Vector2(15.125, 16.25)
+sprite_frames = SubResource("SpriteFrames_xv7mt")
+animation = &"Idle_menu"
+frame = 4
+frame_progress = 0.676534
+flip_h = true
+
+[node name="MenuSong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_i5285")
+autoplay = true
+bus = &"Music"
+
+[connection signal="mouse_entered" from="CanvasLayer/Control/Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/Button" to="." method="_on_button_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/Control/Button2" to="." method="_on_button_2_pressed"]
