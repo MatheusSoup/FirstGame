@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://ciaihdvo0iwmk"]
 
-[ext_resource type="Script" path="res://Scenes/game_maneger.gd" id="1_s65og"]
+[ext_resource type="Script" path="res://Scripts/game_maneger.gd" id="1_s65og"]
 [ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_0cv0x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmtei"]

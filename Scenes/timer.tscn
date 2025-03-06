@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dh4453lsnuvfw"]
 
-[ext_resource type="Script" path="res://timer.gd" id="1_87fnv"]
+[ext_resource type="Script" path="res://Scripts/timer.gd" id="1_87fnv"]
 [ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="2_qgot3"]
 
 [sub_resource type="Theme" id="Theme_cug6t"]

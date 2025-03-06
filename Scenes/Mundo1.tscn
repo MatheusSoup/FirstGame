@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://dva00x2l0irh" path="res://Scenes/Fruta.tscn" id="3_peyvf"]
 [ext_resource type="PackedScene" uid="uid://daki6kx4yss3q" path="res://Scenes/player.tscn" id="4_w2r82"]
 [ext_resource type="Texture2D" uid="uid://cqxkksr35ph27" path="res://Assets/Terrain/Terrain (16x16).png" id="5_ii8vr"]
-[ext_resource type="PackedScene" uid="uid://w8ecs0yoddmj" path="res://deadZoe.tscn" id="7_25v7k"]
+[ext_resource type="PackedScene" uid="uid://w8ecs0yoddmj" path="res://deadZoe.tscn" id="6_jshp6"]
 [ext_resource type="PackedScene" uid="uid://dh4453lsnuvfw" path="res://Scenes/timer.tscn" id="7_xwxgb"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gay4"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a5b8c"]
 texture = ExtResource("5_ii8vr")
 0:0/0 = 0
 1:0/0 = 0
@@ -167,7 +167,7 @@ texture = ExtResource("5_ii8vr")
 
 [sub_resource type="TileSet" id="TileSet_hqy71"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_3gay4")
+sources/0 = SubResource("TileSetAtlasSource_a5b8c")
 
 [node name="Mundo1" type="Node2D"]
 position = Vector2(0, 8)
@@ -190,8 +190,8 @@ countdown_time = 15.0
 
 [node name="deadZONES" type="Node" parent="."]
 
-[node name="DeadZone" parent="deadZONES" instance=ExtResource("7_25v7k")]
-position = Vector2(536, 776)
+[node name="DeadZone" parent="deadZONES" instance=ExtResource("6_jshp6")]
+position = Vector2(576, 800)
 
 [node name="Fruta" parent="." instance=ExtResource("3_peyvf")]
 position = Vector2(232, 400)

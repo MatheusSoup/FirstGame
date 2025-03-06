@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://kj6dopatkwr5"]
 
-[ext_resource type="Script" path="res://main_menu.gd" id="1_p4q75"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_p4q75"]
 [ext_resource type="Texture2D" uid="uid://d1i2ey6fiy1m6" path="res://Assets/Background/Green.png" id="2_v6xku"]
 [ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_xu5xs"]
 [ext_resource type="Texture2D" uid="uid://dq307polw5ljp" path="res://Assets/Main Characters/Ninja Frog/Idle (32x32).png" id="4_lmhrv"]
