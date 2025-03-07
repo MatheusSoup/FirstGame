@@ -43,6 +43,7 @@ func add_fruit():
 
 func win():
 	if frutas_sobra <= 0:
+		player.set_physics_process(false)
 		player.can_move = false
 		win_label.visible = true
 		win_container.visible = true
@@ -50,6 +51,7 @@ func win():
 		lose()
 func lose():
 	timer.stop_timer()
+	player.set_physics_process(false)
 	player.can_move = false
 	lose_label.visible = true
 	lose_container.visible = true
