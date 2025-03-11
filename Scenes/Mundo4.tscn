@@ -274,5 +274,7 @@ position = Vector2(552, 224)
 [node name="Fruta8" parent="." instance=ExtResource("8_mrga6")]
 position = Vector2(448, 264)
 
-[node name="DeadZone9" parent="." instance=ExtResource("9_uusfa")]
+[node name="Node" type="Node" parent="."]
+
+[node name="DeadZone9" parent="Node" instance=ExtResource("9_uusfa")]
 position = Vector2(632, 624)

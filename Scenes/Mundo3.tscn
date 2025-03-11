@@ -184,7 +184,7 @@ tile_map_data = PackedByteArray("AAAbADUAAAAHAAAAAAAcADUAAAAHAAAAAAAdADUAAAAHAAA
 tile_set = SubResource("TileSet_x6fuo")
 
 [node name="Timer" parent="." instance=ExtResource("6_qjmdg")]
-countdown_time = 25.0
+countdown_time = 37.0
 
 [node name="Fruta" parent="." instance=ExtResource("5_r2jtt")]
 position = Vector2(576, 302)
@@ -273,6 +273,8 @@ position = Vector2(842, 186)
 [node name="Fruta29" parent="." instance=ExtResource("5_r2jtt")]
 position = Vector2(843, 29)
 
-[node name="DeadZone7" parent="." instance=ExtResource("7_u18r3")]
+[node name="Node" type="Node" parent="."]
+
+[node name="DeadZone7" parent="Node" instance=ExtResource("7_u18r3")]
 position = Vector2(577, 973)
 scale = Vector2(1, 2)
