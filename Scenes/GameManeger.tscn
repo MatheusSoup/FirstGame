@@ -1,7 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://ciaihdvo0iwmk"]
+[gd_scene load_steps=16 format=3 uid="uid://ciaihdvo0iwmk"]
 
 [ext_resource type="Script" path="res://Scripts/game_maneger.gd" id="1_s65og"]
 [ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_0cv0x"]
+[ext_resource type="Theme" uid="uid://b6h6olccwtqhh" path="res://Theme/WinnerLabel.tres" id="3_mfdea"]
+[ext_resource type="Theme" uid="uid://4plu8vm2revk" path="res://Theme/LoserLabel.tres" id="4_g4nb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmtei"]
 bg_color = Color(0.308594, 0.308594, 0.308594, 1)
@@ -88,15 +90,6 @@ Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
 Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
 Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
 
-[sub_resource type="Theme" id="Theme_t2qw1"]
-Label/colors/font_color = Color(0.933594, 0.109406, 0.109406, 1)
-Label/colors/font_outline_color = Color(0, 0, 0, 1)
-Label/colors/font_shadow_color = Color(0, 0, 0, 1)
-Label/constants/outline_size = 8
-Label/constants/shadow_offset_y = 8
-Label/font_sizes/font_size = 200
-Label/fonts/font = ExtResource("3_0cv0x")
-
 [sub_resource type="Theme" id="Theme_mxcru"]
 Button/colors/font_color = Color(0.921875, 1, 0, 1)
 Button/colors/font_hover_color = Color(0.8205, 0.882813, 0.0852135, 1)
@@ -170,7 +163,7 @@ offset_bottom = -0.136017
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = SubResource("Theme_t2qw1")
+theme = ExtResource("3_mfdea")
 text = "WINNER!"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -203,6 +196,7 @@ theme = SubResource("Theme_47gvd")
 text = "restart"
 
 [node name="LoseLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = -1
 anchor_left = 0.155
 anchor_top = 0.148
@@ -215,7 +209,7 @@ offset_bottom = 4.86398
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-theme = SubResource("Theme_t2qw1")
+theme = ExtResource("4_g4nb1")
 theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 16

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://bfq06dfuhci8k"]
+[gd_scene load_steps=11 format=4 uid="uid://bfq06dfuhci8k"]
 
 [ext_resource type="PackedScene" uid="uid://tvug6o54iyyt" path="res://Scenes/parallax_background.tscn" id="1_jru7t"]
 [ext_resource type="PackedScene" uid="uid://ciaihdvo0iwmk" path="res://Scenes/GameManeger.tscn" id="2_e1qnv"]
@@ -6,11 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cqxkksr35ph27" path="res://Assets/Terrain/Terrain (16x16).png" id="3_jt4ol"]
 [ext_resource type="PackedScene" uid="uid://dh4453lsnuvfw" path="res://Scenes/timer.tscn" id="4_1itnh"]
 [ext_resource type="PackedScene" uid="uid://dva00x2l0irh" path="res://Scenes/Fruta.tscn" id="6_5ah1v"]
-[ext_resource type="PackedScene" uid="uid://brrdcpumvuent" path="res://Scenes/spike.tscn" id="7_jli26"]
 [ext_resource type="PackedScene" uid="uid://buxdd5l8wl08x" path="res://Scenes/plat_random.tscn" id="7_vskfa"]
 [ext_resource type="PackedScene" uid="uid://w8ecs0yoddmj" path="res://deadZoe.tscn" id="9_juyi0"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q4vud"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_olvkk"]
 texture = ExtResource("3_jt4ol")
 0:0/0 = 0
 1:0/0 = 0
@@ -178,7 +177,7 @@ texture = ExtResource("3_jt4ol")
 
 [sub_resource type="TileSet" id="TileSet_het1s"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_q4vud")
+sources/0 = SubResource("TileSetAtlasSource_olvkk")
 
 [node name="Mundo5" type="Node2D"]
 
@@ -199,32 +198,26 @@ tile_set = SubResource("TileSet_het1s")
 position = Vector2(1, 0)
 countdown_time = 15.0
 
-[node name="Fruta" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(263, 338)
-
-[node name="Fruta2" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(370, 339)
-
-[node name="Fruta3" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(305, 282)
-
 [node name="Fruta4" parent="." instance=ExtResource("6_5ah1v")]
 position = Vector2(372, 216)
-
-[node name="Fruta5" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(532, 339)
-
-[node name="Fruta6" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(602, 282)
-
-[node name="Fruta7" parent="." instance=ExtResource("6_5ah1v")]
-position = Vector2(663, 338)
 
 [node name="Fruta8" parent="." instance=ExtResource("6_5ah1v")]
 position = Vector2(530, 215)
 
 [node name="Fruta9" parent="." instance=ExtResource("6_5ah1v")]
 position = Vector2(462, 167)
+
+[node name="Fruta5" parent="." instance=ExtResource("6_5ah1v")]
+position = Vector2(308, 280)
+
+[node name="Fruta6" parent="." instance=ExtResource("6_5ah1v")]
+position = Vector2(604, 283)
+
+[node name="Fruta7" parent="." instance=ExtResource("6_5ah1v")]
+position = Vector2(264, 336)
+
+[node name="Fruta10" parent="." instance=ExtResource("6_5ah1v")]
+position = Vector2(660, 340)
 
 [node name="plataforma" type="Node" parent="."]
 
@@ -257,30 +250,6 @@ position = Vector2(533, 357)
 
 [node name="PlatRandom10" parent="plataforma" instance=ExtResource("7_vskfa")]
 position = Vector2(263, 356)
-
-[node name="Spike" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(321, 408)
-
-[node name="Spike2" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(680, 408)
-
-[node name="Spike3" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(632, 408)
-
-[node name="Spike4" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(584, 408)
-
-[node name="Spike5" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(537, 408)
-
-[node name="Spike6" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(361, 408)
-
-[node name="Spike7" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(284, 408)
-
-[node name="Spike8" parent="." instance=ExtResource("7_jli26")]
-position = Vector2(248, 408)
 
 [node name="DeadZone2" parent="." instance=ExtResource("9_juyi0")]
 position = Vector2(492, 501)

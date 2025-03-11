@@ -48,7 +48,7 @@ func win():
 		win_label.visible = true
 		win_container.visible = true
 	else:
-		lose()
+		player.death()
 func lose():
 	timer.stop_timer()
 	player.set_physics_process(false)
