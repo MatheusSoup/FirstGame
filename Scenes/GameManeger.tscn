@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciaihdvo0iwmk"]
+[gd_scene load_steps=17 format=3 uid="uid://ciaihdvo0iwmk"]
 
 [ext_resource type="Script" path="res://Scripts/game_maneger.gd" id="1_s65og"]
 [ext_resource type="FontFile" uid="uid://cln71xgl4ip3h" path="res://monogram/ttf/monogram.ttf" id="3_0cv0x"]
@@ -18,7 +18,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5s7dg"]
-draw_center = false
+bg_color = Color(0.148682, 0.657673, 0.90625, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
@@ -53,18 +53,6 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjbqx"]
-draw_center = false
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kiwy"]
 bg_color = Color(0.921875, 1, 0, 1)
 draw_center = false
@@ -77,7 +65,7 @@ Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("3_0cv0x")
 Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
-Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/normal = SubResource("StyleBoxFlat_5s7dg")
 Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
 
 [sub_resource type="Theme" id="Theme_emap7"]
@@ -87,7 +75,7 @@ Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("3_0cv0x")
 Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
-Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/normal = SubResource("StyleBoxFlat_5s7dg")
 Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
 
 [sub_resource type="Theme" id="Theme_mxcru"]
@@ -97,7 +85,7 @@ Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("3_0cv0x")
 Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
-Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/normal = SubResource("StyleBoxFlat_5s7dg")
 Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
 
 [sub_resource type="Theme" id="Theme_47gvd"]
@@ -107,8 +95,17 @@ Button/colors/font_pressed_color = Color(0.921875, 1, 0, 1)
 Button/font_sizes/font_size = 40
 Button/fonts/font = ExtResource("3_0cv0x")
 Button/styles/hover = SubResource("StyleBoxFlat_r4hin")
-Button/styles/normal = SubResource("StyleBoxFlat_bjbqx")
+Button/styles/normal = SubResource("StyleBoxFlat_5s7dg")
 Button/styles/pressed = SubResource("StyleBoxFlat_4kiwy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r30rp"]
+bg_color = Color(0.914063, 0.89978, 0.89978, 1)
+
+[sub_resource type="Theme" id="Theme_vmdqj"]
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("3_0cv0x")
+Label/styles/normal = SubResource("StyleBoxFlat_r30rp")
 
 [node name="GameManeger" type="Node"]
 script = ExtResource("1_s65og")
@@ -175,10 +172,10 @@ anchor_left = 0.229
 anchor_top = 0.469
 anchor_right = 0.785
 anchor_bottom = 0.58
-offset_left = 0.191986
-offset_top = 0.0879822
-offset_right = -0.320007
-offset_bottom = 0.160004
+offset_left = -23.808
+offset_top = 40.088
+offset_right = -24.32
+offset_bottom = 40.16
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 150
@@ -202,10 +199,10 @@ anchor_left = 0.155
 anchor_top = 0.148
 anchor_right = 0.889
 anchor_bottom = 0.457
-offset_left = -2.56
-offset_top = 0.0960007
-offset_right = -1.12805
-offset_bottom = 4.86398
+offset_left = -66.56
+offset_top = 16.096
+offset_right = -65.1281
+offset_bottom = 20.864
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -217,6 +214,15 @@ theme_override_constants/outline_size = 0
 theme_override_constants/shadow_outline_size = 4
 text = "LOSER!"
 horizontal_alignment = 1
+
+[node name="DeathNumber" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 320.0
+offset_top = 456.0
+offset_right = 564.0
+offset_bottom = 497.0
+theme = SubResource("Theme_vmdqj")
+text = "Death's Number:"
 
 [connection signal="pressed" from="CanvasLayer/WinContainer/MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/WinContainer/Restart" to="." method="_on_restart_pressed"]

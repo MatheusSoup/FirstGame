@@ -5,11 +5,18 @@ extends Node2D
 @onready var animation = $AnimationPlayer
 @onready var anime2 = $AnimatedSprite2D
 @onready var audio = $MenuSong
+@onready var death_number = $DeathNumber
+
+var mortes = 0
 
 func _ready() -> void:
+	GameData.carregar_mortes()
+	mortes = GameData.mortes
+	
 	animation.play("Menu")
 	anime2.play("Idle_menu")
 	audio.play()
+	death_number.text = "Death number: " + str(mortes)
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Mundo1.tscn")

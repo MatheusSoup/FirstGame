@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://kj6dopatkwr5"]
+[gd_scene load_steps=26 format=3 uid="uid://kj6dopatkwr5"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_p4q75"]
 [ext_resource type="Texture2D" uid="uid://d1i2ey6fiy1m6" path="res://Assets/Background/Green.png" id="2_v6xku"]
@@ -184,6 +184,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Theme" id="Theme_ym5fk"]
+Label/colors/font_color = Color(0.988281, 0.933752, 0.115814, 1)
+Label/colors/font_outline_color = Color(0.480469, 0.451377, 0.0150146, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.611765)
+Label/constants/outline_size = 4
+Label/constants/shadow_offset_y = 7
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("3_xu5xs")
+
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_p4q75")
 
@@ -261,6 +270,14 @@ flip_h = true
 stream = ExtResource("5_i5285")
 autoplay = true
 bus = &"Music"
+
+[node name="DeathNumber" type="Label" parent="."]
+offset_left = 800.0
+offset_top = 32.0
+offset_right = 1081.0
+offset_bottom = 73.0
+theme = SubResource("Theme_ym5fk")
+text = "Death's Number:"
 
 [connection signal="mouse_entered" from="CanvasLayer/Control/Button" to="." method="_on_button_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Control/Button" to="." method="_on_button_mouse_exited"]

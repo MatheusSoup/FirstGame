@@ -1,14 +1,16 @@
-[gd_scene load_steps=12 format=4 uid="uid://cp5u4xumvi2mn"]
+[gd_scene load_steps=14 format=4 uid="uid://cp5u4xumvi2mn"]
 
 [ext_resource type="PackedScene" uid="uid://tvug6o54iyyt" path="res://Scenes/parallax_background.tscn" id="1_yhrs1"]
 [ext_resource type="PackedScene" uid="uid://ciaihdvo0iwmk" path="res://Scenes/GameManeger.tscn" id="2_c7pd1"]
 [ext_resource type="PackedScene" uid="uid://daki6kx4yss3q" path="res://Scenes/player.tscn" id="3_bqd2o"]
+[ext_resource type="PackedScene" uid="uid://buxdd5l8wl08x" path="res://Scenes/plat_random.tscn" id="4_fambl"]
 [ext_resource type="Texture2D" uid="uid://cqxkksr35ph27" path="res://Assets/Terrain/Terrain (16x16).png" id="4_krg78"]
 [ext_resource type="PackedScene" uid="uid://dh4453lsnuvfw" path="res://Scenes/timer.tscn" id="5_iy76x"]
 [ext_resource type="PackedScene" uid="uid://fwt84516488h" path="res://Scenes/totenEnemy.tscn" id="6_62vk8"]
 [ext_resource type="PackedScene" uid="uid://coulmw6tn0vyi" path="res://normalPlat.tscn" id="6_kj2oe"]
 [ext_resource type="PackedScene" uid="uid://brrdcpumvuent" path="res://Scenes/spike.tscn" id="7_0dhym"]
 [ext_resource type="PackedScene" uid="uid://w8ecs0yoddmj" path="res://deadZoe.tscn" id="8_kt1g1"]
+[ext_resource type="PackedScene" uid="uid://dva00x2l0irh" path="res://Scenes/Fruta.tscn" id="11_yb6wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_avek6"]
 texture = ExtResource("4_krg78")
@@ -58,6 +60,7 @@ texture = ExtResource("4_krg78")
 9:1/0 = 0
 10:1/0 = 0
 12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.625, -6.875, -7, 7, 7, 6.875, 7, -6.875)
 13:1/0 = 0
 13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7, -7, 8, -6.875, 8, 8, -6.875, 8)
 14:1/0 = 0
@@ -207,16 +210,19 @@ position = Vector2(0, 1)
 [node name="GameManeger" parent="." instance=ExtResource("2_c7pd1")]
 unique_name_in_owner = true
 
-[node name="Player" parent="." instance=ExtResource("3_bqd2o")]
-position = Vector2(559, 12)
+[node name="Timer" parent="." instance=ExtResource("5_iy76x")]
+position = Vector2(-8, -16)
+countdown_time = 62.0
+
+[node name="PlatRandom" parent="." instance=ExtResource("4_fambl")]
+position = Vector2(752, 112)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAKAB4AAAAGAAQAAAAKAB8AAAAGAAUAAAAKACAAAAAGAAYAAAALAB4AAAAHAAQAAAALAB8AAAAHAAUAAAALACAAAAAHAAYAAAAMAB4AAAAIAAQAAAAMAB8AAAAIAAUAAAAMACAAAAAIAAYAAAASAB4AAAAGAAQAAAASAB8AAAAGAAUAAAATAB4AAAAHAAQAAAATAB8AAAAHAAUAAAAUAB4AAAAHAAQAAAAUAB8AAAAHAAUAAAAVAB4AAAAIAAQAAAAVAB8AAAAIAAUAAAASACAAAAAGAAYAAAATACAAAAAHAAYAAAAUACAAAAAHAAYAAAAVACAAAAAIAAYAAAAuAAwAAAAHAAUAAAAtAAwAAAAHAAUAAAAsAAwAAAAHAAUAAAAsAA0AAAAHAAUAAAAsAA4AAAAHAAUAAAAsAA8AAAAHAAUAAAAsABAAAAAHAAUAAAAsABEAAAAHAAUAAAAtABEAAAAHAAUAAAAuABEAAAAHAAUAAAAvABEAAAAHAAUAAAAwABEAAAAHAAUAAAAxABIAAAAHAAUAAAAyABIAAAAHAAUAAAAzABIAAAAHAAUAAAA0ABIAAAAHAAUAAAA1ABIAAAAHAAUAAAA2ABMAAAAHAAUAAAA3ABMAAAAHAAUAAAA4ABMAAAAHAAUAAAA5ABMAAAAHAAUAAAA5ABQAAAAHAAUAAAA5ABUAAAAHAAUAAAA5ABYAAAAHAAUAAAA5ABcAAAAHAAUAAAA5ABgAAAAHAAUAAAA4ABgAAAAHAAUAAAA3ABgAAAAHAAUAAAA2ABgAAAAHAAUAAAA1ABgAAAAHAAUAAAA0ABgAAAAHAAUAAAAzABgAAAAHAAUAAAAyABgAAAAHAAUAAAAxABgAAAAHAAUAAAAwABgAAAAHAAUAAAAvABgAAAAHAAUAAAAuABgAAAAHAAUAAAAtABgAAAAHAAUAAAAsABgAAAAHAAUAAAArABgAAAAHAAUAAAArABkAAAAHAAUAAAAqABkAAAAHAAUAAAAqABoAAAAHAAUAAAAqABsAAAAHAAUAAAAqABwAAAAHAAUAAAArABwAAAAHAAUAAAAsABwAAAAHAAUAAAAtABwAAAAHAAUAAAAuABwAAAAHAAUAAAAvABwAAAAHAAUAAAAwABwAAAAHAAUAAAAxABwAAAAHAAUAAAAyABwAAAAHAAUAAAAzABwAAAAHAAUAAAA0ABwAAAAHAAUAAAA1ABwAAAAHAAUAAAA2ABwAAAAHAAUAAAA3ABwAAAAHAAUAAAA4ABwAAAAHAAUAAAA5AB0AAAAHAAUAAAA6AB0AAAAHAAUAAAA7AB0AAAAHAAUAAAA8AB0AAAAHAAUAAAA9AB0AAAAHAAUAAAA+AB0AAAAHAAUAAAA/AB0AAAAHAAUAAABAAB0AAAAHAAUAAABAAB4AAAAHAAUAAABAAB8AAAAHAAUAAABAACAAAAAHAAUAAABAACEAAAAHAAUAAAAcAB4AAAAGAAQAAAAdAB4AAAAHAAQAAAAeAB4AAAAHAAQAAAAfAB4AAAAIAAQAAAAcAB8AAAAGAAUAAAAdAB8AAAAHAAUAAAAeAB8AAAAHAAUAAAAfAB8AAAAIAAUAAAAcACAAAAAGAAYAAAAdACAAAAAHAAYAAAAeACAAAAAHAAYAAAAfACAAAAAIAAYAAAAcAAsAAAAHAAQAAAAdAAsAAAAIAAQAAAAbAAsAAAAHAAQAAAAWAAsAAAAHAAQAAAAVAAsAAAAHAAQAAAAUAAsAAAAGAAQAAAAdAAwAAAAIAAYAAAAcAAwAAAAHAAYAAAAbAAwAAAAHAAYAAAAaAAwAAAAHAAYAAAAZAAwAAAAHAAYAAAAYAAwAAAAHAAYAAAAXAAwAAAAHAAYAAAAWAAwAAAAHAAYAAAAVAAwAAAAHAAYAAAAUAAwAAAAGAAYAAAAXAAsAAAAHAAQAAAAYAAsAAAAHAAQAAAAZAAsAAAAHAAQAAAAaAAsAAAAHAAQAAAAWAAIAAAAGAAQAAAAWAAMAAAAGAAUAAAAWAAQAAAAGAAYAAAAXAAIAAAAHAAQAAAAXAAMAAAAHAAUAAAAXAAQAAAAHAAYAAAAQAAcAAAAGAAUAAAAQAAgAAAAGAAYAAAARAAcAAAAHAAUAAAARAAgAAAAHAAYAAAASAAcAAAAIAAUAAAASAAgAAAAIAAYAAAAQAAYAAAAGAAQAAAARAAYAAAAHAAQAAAASAAYAAAAIAAQAAAAYAAQAAAAHAAYAAAAZAAQAAAAHAAYAAAAaAAQAAAAHAAYAAAAbAAQAAAAHAAYAAAAcAAQAAAAHAAYAAAAdAAQAAAAIAAYAAAAdAAMAAAAIAAUAAAAYAAIAAAAHAAQAAAAYAAMAAAAHAAUAAAAZAAIAAAAHAAQAAAAZAAMAAAAHAAUAAAAaAAIAAAAHAAQAAAAaAAMAAAAHAAUAAAAbAAIAAAAHAAQAAAAbAAMAAAAHAAUAAAAcAAIAAAAHAAQAAAAcAAMAAAAHAAUAAAAdAAIAAAAIAAQAAAApAA8AAAAPAAAAAAApABAAAAAPAAEAAAApABEAAAAPAAIAAAApAAoAAAAPAAAAAAApAAsAAAAPAAEAAAApAAwAAAAPAAIAAAApAAUAAAAPAAAAAAApAAYAAAAPAAEAAAApAAcAAAAPAAIAAAA=")
+tile_map_data = PackedByteArray("AAAKAB4AAAAGAAQAAAAKAB8AAAAGAAUAAAAKACAAAAAGAAYAAAALAB4AAAAHAAQAAAALAB8AAAAHAAUAAAALACAAAAAHAAYAAAAMAB4AAAAIAAQAAAAMAB8AAAAIAAUAAAAMACAAAAAIAAYAAAASAB4AAAAGAAQAAAASAB8AAAAGAAUAAAATAB4AAAAHAAQAAAATAB8AAAAHAAUAAAAUAB4AAAAHAAQAAAAUAB8AAAAHAAUAAAAVAB4AAAAIAAQAAAAVAB8AAAAIAAUAAAASACAAAAAGAAYAAAATACAAAAAHAAYAAAAUACAAAAAHAAYAAAAVACAAAAAIAAYAAAAcAB4AAAAGAAQAAAAdAB4AAAAHAAQAAAAeAB4AAAAHAAQAAAAfAB4AAAAIAAQAAAAcAB8AAAAGAAUAAAAdAB8AAAAHAAUAAAAeAB8AAAAHAAUAAAAfAB8AAAAIAAUAAAAcACAAAAAGAAYAAAAdACAAAAAHAAYAAAAeACAAAAAHAAYAAAAfACAAAAAIAAYAAAAcAAsAAAAHAAQAAAAdAAsAAAAIAAQAAAAbAAsAAAAHAAQAAAAWAAsAAAAHAAQAAAAVAAsAAAAHAAQAAAAUAAsAAAAGAAQAAAAdAAwAAAAIAAYAAAAcAAwAAAAHAAYAAAAbAAwAAAAHAAYAAAAaAAwAAAAHAAYAAAAZAAwAAAAHAAYAAAAYAAwAAAAHAAYAAAAXAAwAAAAHAAYAAAAWAAwAAAAHAAYAAAAVAAwAAAAHAAYAAAAUAAwAAAAGAAYAAAAXAAsAAAAHAAQAAAAYAAsAAAAHAAQAAAAZAAsAAAAHAAQAAAAaAAsAAAAHAAQAAAAWAAIAAAAGAAQAAAAWAAMAAAAGAAUAAAAWAAQAAAAGAAYAAAAXAAIAAAAHAAQAAAAXAAMAAAAHAAUAAAAXAAQAAAAHAAYAAAAQAAcAAAAGAAUAAAAQAAgAAAAGAAYAAAARAAcAAAAHAAUAAAARAAgAAAAHAAYAAAASAAcAAAAIAAUAAAASAAgAAAAIAAYAAAAQAAYAAAAGAAQAAAARAAYAAAAHAAQAAAASAAYAAAAIAAQAAAAYAAQAAAAHAAYAAAAZAAQAAAAHAAYAAAAaAAQAAAAHAAYAAAAbAAQAAAAHAAYAAAAcAAQAAAAHAAYAAAAdAAQAAAAIAAYAAAAdAAMAAAAIAAUAAAAYAAIAAAAHAAQAAAAYAAMAAAAHAAUAAAAZAAIAAAAHAAQAAAAZAAMAAAAHAAUAAAAaAAIAAAAHAAQAAAAaAAMAAAAHAAUAAAAbAAIAAAAHAAQAAAAbAAMAAAAHAAUAAAAcAAIAAAAHAAQAAAAcAAMAAAAHAAUAAAAdAAIAAAAIAAQAAAApAA8AAAAPAAAAAAApABAAAAAPAAEAAAApABEAAAAPAAIAAAApAAoAAAAPAAAAAAApAAsAAAAPAAEAAAApAAwAAAAPAAIAAAApAAUAAAAPAAAAAAApAAYAAAAPAAEAAAApAAcAAAAPAAIAAAArABcAAAAMAAAAAAAsABcAAAANAAAAAAAtABcAAAAOAAAAAAA1ABcAAAAMAAAAAAA2ABcAAAANAAAAAAA3ABcAAAAOAAAAAAApABMAAAAPAAAAAAApABQAAAAPAAEAAAApABUAAAAPAAIAAAApABcAAAAPAAAAAAApABgAAAAPAAEAAAApABkAAAAPAAIAAAApABsAAAAPAAAAAAApABwAAAAPAAEAAAApAB0AAAAPAAIAAAA2AB0AAAAMAAEAAAA+ACEAAAAGAAAAAAA+ACIAAAAGAAEAAAA+ACMAAAAGAAIAAAA/ACEAAAAHAAAAAAA/ACIAAAAHAAEAAAA/ACMAAAAHAAIAAABAACEAAAAIAAAAAABAACIAAAAIAAEAAABAACMAAAAIAAIAAAAuABAAAAAPAAAAAAAuABEAAAAPAAEAAAAuABIAAAAPAAIAAAAuABQAAAAPAAAAAAAuABUAAAAPAAEAAAAuABYAAAAPAAIAAAA0ABQAAAAPAAAAAAA0ABUAAAAPAAEAAAA0ABYAAAAPAAIAAAA0ABAAAAAPAAAAAAA0ABEAAAAPAAEAAAA0ABIAAAAPAAIAAAA0AAwAAAAPAAAAAAA0AA0AAAAPAAEAAAA0AA4AAAAPAAIAAAAuAAwAAAAPAAAAAAAuAA0AAAAPAAEAAAAuAA4AAAAPAAIAAAAtAB0AAAAGAAQAAAAtAB4AAAAGAAUAAAAtAB8AAAAGAAYAAAAuAB0AAAAHAAQAAAAuAB4AAAAHAAUAAAAuAB8AAAAHAAYAAAAvAB0AAAAIAAQAAAAvAB4AAAAIAAUAAAAvAB8AAAAIAAYAAAA=")
 tile_set = SubResource("TileSet_sgy1p")
 
-[node name="Timer" parent="." instance=ExtResource("5_iy76x")]
-position = Vector2(7, -16)
-countdown_time = 62.0
+[node name="Player" parent="." instance=ExtResource("3_bqd2o")]
+position = Vector2(760, 96)
 
 [node name="totenEnemy" parent="." instance=ExtResource("6_62vk8")]
 position = Vector2(-96, -432)
@@ -264,3 +270,130 @@ position = Vector2(381, 168)
 
 [node name="DeadZone" parent="Node" instance=ExtResource("8_kt1g1")]
 position = Vector2(558, 634)
+
+[node name="PlatRandom2" parent="." instance=ExtResource("4_fambl")]
+position = Vector2(848, 112)
+
+[node name="PlatRandom3" parent="." instance=ExtResource("4_fambl")]
+position = Vector2(848, 168)
+
+[node name="PlatRandom4" parent="." instance=ExtResource("4_fambl")]
+position = Vector2(752, 168)
+
+[node name="Spike7" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 200)
+rotation = 1.5708
+
+[node name="Spike8" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 200)
+rotation = -1.5708
+
+[node name="Spike9" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 232)
+rotation = 1.5708
+
+[node name="Spike10" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 264)
+rotation = 1.5708
+
+[node name="Spike11" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 296)
+rotation = 1.5708
+
+[node name="Spike12" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 328)
+rotation = 1.5708
+
+[node name="Spike13" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(760, 360)
+rotation = 1.5708
+
+[node name="Spike14" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 232)
+rotation = -1.5708
+
+[node name="Spike15" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 264)
+rotation = -1.5708
+
+[node name="Spike16" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 296)
+rotation = -1.5708
+
+[node name="Spike17" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 328)
+rotation = -1.5708
+
+[node name="Spike18" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(824, 360)
+rotation = -1.5708
+
+[node name="Spike19" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(720, 360)
+
+[node name="Spike20" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(704, 360)
+
+[node name="Spike21" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(864, 360)
+
+[node name="Spike22" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(880, 360)
+
+[node name="Spike23" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(720, 392)
+rotation = 3.14159
+
+[node name="Spike24" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(704, 392)
+rotation = 3.14159
+
+[node name="Spike25" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(864, 392)
+rotation = 3.14159
+
+[node name="Spike26" parent="." instance=ExtResource("7_0dhym")]
+position = Vector2(880, 392)
+rotation = 3.14159
+
+[node name="Fruta" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(320, 464)
+
+[node name="Fruta2" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(480, 464)
+
+[node name="Fruta3" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(552, 376)
+
+[node name="Fruta4" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(424, 328)
+
+[node name="Fruta5" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(608, 272)
+
+[node name="Fruta6" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(344, 152)
+
+[node name="Fruta7" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(832, 8)
+
+[node name="Fruta8" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(680, 8)
+
+[node name="Fruta9" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(752, 88)
+
+[node name="Fruta10" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(848, 152)
+
+[node name="Fruta11" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(792, 248)
+
+[node name="Fruta12" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(728, 440)
+
+[node name="Fruta13" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(952, 424)
+
+[node name="Fruta14" parent="." instance=ExtResource("11_yb6wq")]
+position = Vector2(1016, 512)

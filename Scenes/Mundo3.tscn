@@ -184,7 +184,7 @@ tile_map_data = PackedByteArray("AAAbADUAAAAHAAAAAAAcADUAAAAHAAAAAAAdADUAAAAHAAA
 tile_set = SubResource("TileSet_x6fuo")
 
 [node name="Timer" parent="." instance=ExtResource("6_qjmdg")]
-countdown_time = 37.0
+countdown_time = 40.0
 
 [node name="Fruta" parent="." instance=ExtResource("5_r2jtt")]
 position = Vector2(576, 302)
